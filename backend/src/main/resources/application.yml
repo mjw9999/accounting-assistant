@@ -5,9 +5,9 @@ spring:
   application:
     name: personal-accounting-assistant
   datasource:
-    url: jdbc:mysql://localhost:3306/accounting_assistant?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
-    username: root
-    password: root
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/accounting_assistant?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true}
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
