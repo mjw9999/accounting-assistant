@@ -5,7 +5,7 @@ export const apiOrigin = import.meta.env.VITE_API_ORIGIN || 'http://localhost:80
 
 const http = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
-  timeout: 15000
+  timeout: 60000
 })
 
 const PUBLIC_AUTH_PATHS = ['/auth/login', '/auth/register', '/auth/reset-password']
