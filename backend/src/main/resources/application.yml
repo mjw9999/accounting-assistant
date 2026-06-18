@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: personal-accounting-assistant
+  datasource:
+    url: jdbc:mysql://localhost:3306/accounting_assistant?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+app:
+  upload-dir: uploads
+  security:
+    token-secret: ${APP_TOKEN_SECRET:byzs-personal-accounting-assistant-secret}
+    token-expiration-hours: 24
